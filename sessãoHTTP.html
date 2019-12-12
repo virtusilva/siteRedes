@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>HTTP</title>
+</head>
+
+<body>
+
+    <!-- nav bar -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="VisaoGeralHTTP.html">Visão Geral</a></li>
+        <li><a href="cache.html">Cache HTTP</a></li>
+        <li><a href="cookiesHTTP.html">Cookies HTTP</a></li>
+        <li><a href="evolucaoHTTP.html">Evolução do HTTP</a></li>
+        <li><a href="mesagensHTTP.html">Mensagens HTTP</a></li>
+        <li><a href="sessãoHTTP.html">Uma sessão típica em HTTP</a></li>
+        <li><a href="genConect.html">Gerenciamento de conexões</a></li>
+        <li><a href="controleAce.html">Controle de Acesso</a></li>
+        <li><a href="preBusca.html">Controlando a pré-busca</a></li>
+
+    </ul>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="index.html" class="brand-logo "><img src="imgs/logoMDN.png" alt=""
+                        style="width: 63px; margin-left: 10px;"></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="rest.html">rest</a></li>
+
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Tutoriais<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- banner -->
+    <div class="col s12 l12 m12 grey-text text-darken-4 right-align" id="bannerNome">
+        <div class="container">
+            <b>Uma típica sessão HTTP</b>
+        </div>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <nav>
+        <div class="nav-wrapper grey darken-4 truncate">
+            <div class="col s12" id="breadC" style="font-weight: 200; margin-left: 20px;">
+                <a href="https://developer.mozilla.org/pt-BR/docs/Web" class="breadcrumb">Tecnologia para
+                    desenvolvedores web</a>
+                <a href="#!" class="breadcrumb">HTTP</a>
+                <a href="#!" class="breadcrumb">Uma típica sessão HTTP</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteudo -->
+    <div class="row">
+        <div class="container">
+            <p>Em protocolos cliente-servidor, como o HTTP, sessões consistem de três partes:</p>
+            <ul>
+                <li>O cliente estabelece uma conexão TCP (ou a conexão apropriada caso o protocolo TCP não seja o
+                    protocolo usado na camada de transporte).</li>
+                <li>O cliente envia sua requisição, e então aguarda por uma resposta.</li>
+                <li>O servidor processa a requisição, enviando de volta sua resposta, fornecendo um "status code"
+                    (código de status), e os dados apropriados.</li>
+            </ul>
+            <p>Na versão HTTP/1.1 a conexão não é mais fechada após a terceira etapa completar-se, mas é garantida ao
+                cliente uma nova requisição, implicando na possibilidade da segunda e terceira etapa serem novamente
+                realizadas quantas vezes forem desejadas.</p>
+            </br>
+            <div class="divider"></div></br>
+            <h2>Estabelecendo uma conexão</h2>
+            <p>Em protocolos cliente-servidor é o cliente quem estabelece as conexões. Abrir uma conexão HTTP significa
+                iniciar uma conexão na camada de transporte subjacente, geralmente uma conexão usando o protocolo TCP.
+            </p>
+            <p>Usando o protocolo TCP, a porta padrão para um servidor HTTP em um computador é a porta 80, porém outras
+                portas podem ser utilizadas, como a 8000 ou 8080.
+                A URL da página a se requisitar contém o nome do domínio e o número da porta, embora este último pode
+                ser omitido caso a porta seja a 80. Leia Identificando recursos na Web para mais informações.</p>
+
+            <div class="divider"></div></br>
+            <h2>Enviando uma requisição de cliente</h2>
+            <p>Depois que a conexão é estabelecida, o user-agent pode enviar a solicitação (um user-agent normalmente é um navegador Web, podendo ser também qualquer outra coisa, como um crawler, por exemplo). Uma solicitação de cliente consiste em diretivas de texto, separadas por quebras de linhas (CRLF), divididas em três blocos:</p>
+            <ul>
+                <li>A primeira linha contém um método de requisição seguido por seus parâmetros:</li>
+                <ul>
+                    <li>o caminho do documento, ou seja, uma URL absoluta sem o protocolo ou nome de domínio</li>
+                    <li>a versão do protocolo HTTP</li>
+                </ul>
+                <li>As linhas subsequentes representam um cabeçalho HTTP, fornecendo ao servidor informações sobre o tipo de dado apropriado (por exemplo, qual o idioma, quais os tipos MIME) ou outros dados que alteram seu comportamento (por exemplo, não enviando uma resposta se já estiver em cache). Esses cabeçalhos HTTP formam um bloco que termina com uma linha vazia.</li>
+                <li>O bloco final é um bloco de dados opcional, que pode conter dados adicionais usados principalmente pelo método POST.</li>
+            </ul>
+            <h4>Exemplos de requisições</h4>
+            <p>Buscando a página raiz do developer.mozilla.org (http://developer.mozilla.org/), e dizendo ao servidor que o user-agent preferiria a página em francês, se possível:</p>
+            <img src="imgs/Screenshot_5.png" alt="" class="responsive-img">
+            <p>Observe que a linha final vazia separa o bloco de dados do bloco de cabeçalho. Como não há nenhum Content-Length fornecido em um cabeçalho HTTP, esse bloco de dados é apresentado vazio, marcando o final dos cabeçalhos, permitindo que o servidor processe a solicitação no momento em que recebe essa linha vazia.</p>
+            <p>Por exemplo, enviando o resultado de um formulário:</p>
+            <img src="imgs/Screenshot_6.png" alt="" class="responsive-img">
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="col ">
+
+        <footer class="page-footer grey darken-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col l3 s12">
+                        <h5 class="white-text">The Http</h5>
+                        <p class="grey-text text-lighten-4">Http</p>
+                    </div>
+                    <div class="col l2 offset-l2 s12">
+                        <h5 class="white-text">MDN</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Tecnologias web</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Aprenda desenvolvimento web</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Sobre a MDN</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Comentários</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l2 offset-l2 s12 right">
+                        <h5 class="white-text">Mozilla</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Sobre</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Fale conosco</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Firefox</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright grey darken-4">
+                <div class="container" id="footerLinks">
+                    © 2019 no licence.Content is available under these licenses.
+                    <a class="grey-text text-lighten-4 right" href="#!">Termos</a>
+                    <a class="grey-text text-lighten-4 right" href="#!">Privacidade</a>
+                    <a class="grey-text text-lighten-4 right" href="#!">Cookies</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <!-- Link JS -->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
+</body>
+
+</html>

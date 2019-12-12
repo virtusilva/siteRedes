@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>HTTP</title>
+</head>
+
+<body>
+
+    <!-- nav bar -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="VisaoGeralHTTP.html">Visão Geral</a></li>
+        <li><a href="cache.html">Cache HTTP</a></li>
+        <li><a href="cookiesHTTP.html">Cookies HTTP</a></li>
+        <li><a href="http://www.evolutionoftheweb.com/?hl=pt-br">Evolução do HTTP</a></li>
+        <li><a href="mesagensHTTP.html">Mensagens HTTP</a></li>
+        <li><a href="sessãoHTTP.html">Uma sessão típica em HTTP</a></li>
+        <li><a href="genConect.html">Gerenciamento de conexões</a></li>
+        <li><a href="controleAce.html">Controle de Acesso</a></li>
+        <li><a href="preBusca.html">Controlando a pré-busca</a></li>
+
+    </ul>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="#!" class="brand-logo "><img src="imgs/logoMDN.png" alt=""
+                        style="width: 63px; margin-left: 10px;"></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="rest.html">Rest</a></li>
+
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Tutoriais<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- banner -->
+    <div class="col s12 l12 m12 grey-text text-darken-4 right-align" id="bannerNome">
+        <div class="container">
+            <b>HTTP ou Hypertext Transfer Protocol</b>
+        </div>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <nav>
+        <div class="nav-wrapper grey darken-4 truncate">
+            <div class="col s12" id="breadC" style="font-weight: 200; margin-left: 20px;">
+                <a href="https://developer.mozilla.org/pt-BR/docs/Web" class="breadcrumb">Tecnologia para
+                    desenvolvedores web</a>
+                <a href="#!" class="breadcrumb">HTTP</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteudo -->
+    <div class="row">
+        <div class="container">
+            <h5><b>Hypertext Transfer Protocol (HTTP)</b></h5>
+            <p> é um protocolo de camada de aplicação para transmissão de documentos hipermídia, como o HTML. Foi
+                desenvolvido para comunicação entre navegadores web e servidores web, porém pode ser utilizado para
+                outros propósitos também. Segue um modelo cliente-servidor clássico, onde um cliente abre uma
+                conexão,
+                executa uma requisição e espera até receber uma resposta. É também um protocolo sem estado ou
+                stateless
+                protocol, que significa que o servidor não mantem nenhum dado entre duas requisições (state). Apesar
+                de
+                ser frequentemente baseado em uma camada TCP/IP, pode ser utilizado em qualquer camada de transporte
+                confiável, ou seja, um protocolo que não perde mensagens silenciosamente como o UDP.</p>
+            </br>
+            <div class="col l6 m6 s12">
+                <h5><b>Tutoriais:</b></h5>
+                <P>Aprenda como usar HTTP com guias e tutoriais.</P>
+                </br>
+                <a href="VisaoGeralHTTP.html"><b>Visão geral do HTTP</b></a>
+                <p>Apresenta os recursos básicos do protocolo cliente-servidor: o que pode fazer e quais seus usos.
+                </p>
+                </br>
+                <a href="cache.html"><b>Cache HTTP</b></a>
+                <p>O Cache é muito importante para websites rápidos. Este artigo descreve diferentes métodos de
+                    cache e
+                    como utilizar os cabeçalhos HTTP para controlá-los.</p>
+                </br>
+                <a href="cookiesHTTP.html"><b>Cookies HTTP</b></a>
+                <p>O funcionamento dos cookies é definido pela RFC 6265. Ao receber uma requisição HTTP, o servidor
+                    pode
+                    enviar um cabeçalho Set-Cookie com a resposta. Depois, o cliente retorna o valor do cookie a
+                    cada
+                    requisição ao mesmo servidor na forma de um cabeçalho Cookie HTTP. O cookie também pode ser
+                    configurado para expirar em um determinado tempo ou permanecer restrito a um domínio ou endereço
+                    específicos.</p>
+                </br>
+                <a href="http://www.evolutionoftheweb.com/?hl=pt-br"><b>Evolução do HTTP</b></a>
+                <p>Uma breve descrição das mudanças que ocorreram no HTTP em versões mais antigas para o moderno
+                    HTTP/2
+                    em diante.</p>
+                </br>
+                <a href="mesagensHTTP.html"><b>Mensagens HTTP</b></a>
+                <p>Descreve os tipos e a estrutura das diferentes mensagens do HTTP/1.x e HTTP/2.</p>
+                </br>
+                <a href="sessãoHTTP.html"><b>Uma sessão típica em HTTP</b></a>
+                <p>Mostra e explica o fluxo de uma sessão HTTP normal.</p>
+                </br>
+                <a href="genConect.html"><b>Gerenciamento de conexões em HTTP/1.</b></a>
+                <p>Descreve os três modelos de conexão disponíveis no HTTP/1.x, seus pontos fortes e fracos.</p>
+                </br>
+                <a href="controleAce.html"><b>Controle de Acesso HTTP (CORS)</b></a>
+                <p>As requisições CORS são requisições HTTP de recursos de domínios diferentes do domínio que está
+                    fazendo a requisição. um exemplo é um site A (SiteA.com) realizando uma requisição de uma imagem
+                    por
+                    meio de um elemento img para um site B (SiteB.com/img.png). Hoje em dia encontramos o CORS em
+                    grande
+                    maioria das páginas webs, carregando scripts, imagens, folhas de estilos, etc.</p>
+                </br>
+                <a href="preBusca.html"><b>Controlando a pré-busca de DNS</b></a>
+                <p>O Firefox e outros navegadores atuais utilizam a pré-busca de DNS, ou seja, o navegador faz a
+                    busca
+                    do nome do domínio nos links contidos numa página antes que o recurso seja requisitado, como por
+                    exemplo imagens, scripts e folhas de estilo. Isto tudo ocorre em segundo plano, para que quando
+                    o
+                    recurso necessite ser carregado, o endereço DNS já esteja resolvido. Isto diminui a latência
+                    quando,
+                    por exemplo, um usuário clica em um link.</p>
+
+
+
+            </div>
+            <div class="col l6 m6 s12">
+                <h5><B>Referências</B></h5>
+                <p>Navegue por uma detalhada documentação de referências em HTTP.</p>
+                </br>
+                <a href="#"><b>Cabeçalhos HTTP</b></a>
+                <p>As mensagens de cabeçalho HTTP são utilizadas para realizar a descrição de algum recurso ou
+                    comportamento do cliente ou servidor. Propriedades customizadas nos cabeçalhos utilizam o
+                    prefixo
+                    'X-' ; Outras no registro IANA, cujo conteúdo original foi definido na RFC 4229. IANA também
+                    mantém
+                    o registro de novas propostas para mensagens de cabeçalhos HTTP.</p>
+                </br>
+                <a href="#"><b>Métodos de requisição HTTP</b></a>
+                <p>As mais diferentes requisições podem ser utilizadas pelos métodos de requisições HTTP: GET e
+                    POST,
+                    mas também algumas requisições menos comuns pelos métodos OPTIONS, DELETE ou TRACE.</p>
+                </br>
+                <a href="#"><b>Respostas de códigos de status em HTTP</b></a>
+                <p>Os códigos de status do HTTP indicam quando uma requisição foi completada. Códigos de status são
+                    agrupados em cinco classes: Informações, respostas, respostas de sucesso, redirecionamentos,
+                    erros
+                    de cliente e erros de servidor.</p>
+                </br>
+                <h5>Ferramentas & recursos</h5>
+                <p>Ferramentas que irão lhe ajudar a testar e debugar as suas requisições HTTP.</p>
+                </br>
+                <a href="#"><b>Ferramentas de desenvolvedores Firefox</b></a></br>
+                <a href="#">Network monitor</a></br>
+                </br>
+                <a href="#"><b>RedBot</b></a></br>
+                <p>Uma ferramenta para visualizar seus Headers relacionados em cache.</p>
+                </br>
+                <a href="#"><b>Como os navegadores funcionam</b></a>
+                <p>Um artigo bem abrangente sobre a parte interna dos navegadores e os fluxos de requisições via
+                    protocolo HTTP. O artigo que todos os desenvolvedores web, com certeza, devem ler.</p>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <div class="col ">
+
+        <footer class="page-footer grey darken-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col l3 s12">
+                        <h5 class="white-text">MDN web docs</h5>
+                        <p class="grey-text text-lighten-4">moz://a</p>
+                    </div>
+                    <div class="col l2 offset-l2 s12">
+                        <h5 class="white-text">MDN</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Tecnologias web</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Aprenda desenvolvimento web</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Sobre a MDN</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Comentários</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l2 offset-l2 s12 right">
+                        <h5 class="white-text">Mozilla</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Sobre</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Fale conosco</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Firefox</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright grey darken-4">
+                <div class="container" id="footerLinks">
+                    © 2005-2019 Mozilla and individual contributors.Content is available under these licenses.
+                    <a class="grey-text text-lighten-4 right" href="#!">Termos</a>
+                    <a class="grey-text text-lighten-4 right" href="#!">Privacidade</a>
+                    <a class="grey-text text-lighten-4 right" href="#!">Cookies</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <!-- Link JS -->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

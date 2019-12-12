@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#bannerNome {
+    font-size: 40px;
+    font-style: oblique;
+    color: white;
+    margin-right: 17% !important;
+}
+
+#menuMobile {
+    height: 200px;
+    width: 200px;    
+}
+
+.sidenav-overlay {
+    z-index: 1;
+}
+
+#footerLinks a {
+    margin-right: 20px;
+}
+
+.collapsible {
+    border: 0 !important;
+}
+
+.collapsible-body {
+    padding: 14px !important;
+}
+
+p {
+    margin-top: 10px;
+}
+ul {
+    margin-left: 25px;
+}
+.container ul li {
+    margin-top: 20px;
+}
+h2, h3, h4, h5 {
+    margin: 20px;
+}
+#cont {
+    margin-bottom: 150px;
+}
